@@ -17,7 +17,6 @@ import org.jsoup.select.Elements;
 public class App {
 	
    //main+alt+/
-	private static final String Film = null;
 
 	public static void main(String[] args) {
 	//设置需要抓取的路径：目标URL	
@@ -29,19 +28,24 @@ public class App {
 			System.out.println(es.size());
 			
 			//创建一个影片的列表
-			ArrayList<Film> list = new ArrayList<>();
+			ArrayList<Film> list=new ArrayList();
 			
 			for(Element e :es){
 				Film f=new Film();
 				
 				//每一部影片的名字
-				Element t=e.select(".title").first();
-				String num=e.select(".star span").last().text();
-				System.out.println(t.text()+","+num);
 				
-				//f.id
-				//f.title
+				f.id=Integer.parseInt(e.select(".pic em").first().text());
+				f.poster=e.select("img").first().attr("src");
+				f.info=e.select(".bd p").first().text();
+				f.title=e.select(".title").first().text();
+				f.rating=Double.parseDouble(e.select(".rating_num").first().text());
+				String num=e.select(".star span").last().text();
+				f.num=Integer.parseInt(num.substring(0,num.length()-3));
+				f.quote=e.select(".inq").first().text();
+//				
 				list.add(f);
+				System.out.println(f);
 			}
 //			String title=doc.title();
 //			String data=doc.data();
@@ -57,8 +61,4 @@ public class App {
 		}
 	}
 
-	private static void ArrayList(String film2) {
-		// TODO Auto-generated method stub
-		
-	}
 }
