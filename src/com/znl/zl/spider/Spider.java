@@ -65,7 +65,7 @@ public class Spider implements Runnable {
 				f.quote=e.select(".inq").first().text();
 				
 				list.add(f);
-				System.out.println(name+":"+f);
+				//System.out.println(name+":"+f);
 			}
 			System.out.println(name+"线程，完成"+url);
 		} catch (IOException e) {
