@@ -18,7 +18,7 @@ public class App2 {
 		//elemt+alt+/
 		Elements es=doc.select("#info .attrs a");
 		System.out.println(es.size());
-		System.out.println(es.first().text());
+		System.out.println(es.text());
 //		ArrayList<Film2> list=new ArrayList();
 //		for(Element e :es){
 //			Film2 f=new Film2();
@@ -26,7 +26,8 @@ public class App2 {
 //			//每一部影片的信息
 //			
 //		
-//			f.director=e.select("span").first().attr("a");
+//			f.director=e.select(".attr a").first().text();
+		//   f.screenwriter=e.select().
 //
 ////			
 //			list.add(f);
