@@ -33,7 +33,7 @@ public class App {
 			for(Element e :es){
 				Film f=new Film();
 				
-				//每一部影片的名字
+				//每一部影片的信息
 				
 				f.id=Integer.parseInt(e.select(".pic em").first().text());
 				f.poster=e.select("img").first().attr("src");
